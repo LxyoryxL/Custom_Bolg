@@ -10,7 +10,7 @@ Vue.use(VueRouter)
 export default new VueRouter({
     mode: 'history',
     routes: [{
-        path: '/',
+        path: '/display',
         component: ShowBlog
     }, {
         path: '/add',

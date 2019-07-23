@@ -38,7 +38,7 @@ export default {
         )
         .then(response => {
           // 删除本条博客成功，跳转到博客总览页面
-          this.$router.push({ path: "/" });
+          this.$router.push({ path: "/display" });
         });
     }
   }

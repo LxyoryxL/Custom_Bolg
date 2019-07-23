@@ -69,10 +69,13 @@ export default {
       axios
         .post("https://one-blog-62eb0.firebaseio.com/post.json", this.blog)
         .then(data => {
-          console.log(data);
           //提交数据成功，然后 显示‘博客总览’，隐藏‘添加博客’
           this.submitted = true;
         });
+      // 跳转到博客总览页面
+      setTimeout(() => {
+        this.$router.push({ path: "/display" });
+      }, 3000);
     }
   }
 };
