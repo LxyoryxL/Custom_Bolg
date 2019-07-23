@@ -11,7 +11,7 @@ export default new VueRouter({
     mode: 'history',
     routes: [{
         path: '/',
-        redirect: '/display'
+        component: ShowBlog
     }, {
         path: '/display',
         component: ShowBlog
