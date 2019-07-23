@@ -7,6 +7,8 @@
     <ul>
       <li v-for="item in blog.category">{{item}}</li>
     </ul>
+    <button @click="deleteSingleBlog()">删除</button>
+    <router-link :to="'/edit/'+id">编辑</router-link>
   </div>
 </template>
 
@@ -26,6 +28,19 @@ export default {
       id: this.$route.params.id,
       blog: {}
     };
+  },
+  methods: {
+    // 删除单条博客
+    deleteSingleBlog: function() {
+      axios
+        .delete(
+          "https://one-blog-62eb0.firebaseio.com/post/" + this.id + ".json"
+        )
+        .then(response => {
+          // 删除本条博客成功，跳转到博客总览页面
+          this.$router.push({ path: "/" });
+        });
+    }
   }
 };
 </script>
